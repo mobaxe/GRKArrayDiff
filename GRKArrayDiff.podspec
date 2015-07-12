@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "GRKArrayDiff"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "Provides diffs between two NSArrays with details about deletions, insertions, moves, and modifications."
   s.description  = <<-DESC
 Given two NSArrays, an old and current, GRKArrayDiff will report all deletions, insertions,
