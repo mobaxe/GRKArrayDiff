@@ -16,9 +16,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#if TARGET_OS_IPHONE
-#import <UIKit/UIKit.h>
-#endif
 #import "GRKArrayDiffInfo.h"
 
 typedef NS_ENUM(NSUInteger, GRKArrayDiffType) {
@@ -33,19 +30,19 @@ typedef NS_ENUM(NSUInteger, GRKArrayDiffType) {
 /**
  * A NSSet of `GRKArrayDiffInfo` objects describing the elements which were deleted from the previous array.
  */
-@property (nonatomic,strong,readonly) NSSet *deletions;
+@property (nonnull,nonatomic,strong,readonly) NSSet *deletions;
 /**
  * A NSSet of `GRKArrayDiffInfo` objects describing the elements which were inserted into the current array.
  */
-@property (nonatomic,strong,readonly) NSSet *insertions;
+@property (nonnull,nonatomic,strong,readonly) NSSet *insertions;
 /**
  * A NSSet of `GRKArrayDiffInfo` objects describing the elements whose indicies changed in the current array from the previous array, but not as a result of deletions or insertions.
  */
-@property (nonatomic,strong,readonly) NSSet *moves;
+@property (nonnull,nonatomic,strong,readonly) NSSet *moves;
 /**
  * A NSSet of `GRKArrayDiffInfo` objects describing the elements whose indicies did not change but whose contents are considered modified.
  */
-@property (nonatomic,strong,readonly) NSSet *modifications;
+@property (nonnull,nonatomic,strong,readonly) NSSet *modifications;
 
 /**
  * Create and populate a new instance of a GRKArrayDiff with the given previous and current arrays, and supporting blocks.
@@ -57,7 +54,7 @@ typedef NS_ENUM(NSUInteger, GRKArrayDiffType) {
  *
  * @return A newly created instance with all properties populated with the appropriate diff information.
  */
-- (instancetype)initWithPreviousArray:(NSArray *)previousArray currentArray:(NSArray *)currentArray identityBlock:(NSString *(^)(id obj))identityBlock modifiedBlock:(BOOL(^)(id obj))modifiedBlock;
+- (nonnull instancetype)initWithPreviousArray:(nullable NSArray *)previousArray currentArray:(nullable NSArray *)currentArray identityBlock:(nullable  NSString * __nullable (^)(id __nonnull obj))identityBlock modifiedBlock:(nullable BOOL(^)(id __nonnull obj))modifiedBlock;
 
 /**
  * A convenience method to return the diff set by type.
@@ -67,7 +64,7 @@ typedef NS_ENUM(NSUInteger, GRKArrayDiffType) {
  *
  * @return An `NSSet` containing `GRKArrayDiffInfo` objects for the specified type, or `nil` if the `type` was not understood.
  */
-- (NSSet *)diffInfoSetForType:(GRKArrayDiffType)type;
+- (nullable NSSet *)diffInfoSetForType:(GRKArrayDiffType)type;
 
 /**
  * A convenience method to provide `NSIndexSet`s for the indicies of a specified diff set.
@@ -80,22 +77,6 @@ typedef NS_ENUM(NSUInteger, GRKArrayDiffType) {
  *
  * @return An array of `NSIndexSet` objects representing the indicies of the specified set, in the given section, or `nil` if the `diffType` was not understood.
  */
-- (NSArray *)indexPathsForDiffType:(GRKArrayDiffType)diffType withSection:(NSInteger)section;
-
-#if TARGET_OS_IPHONE
-
-#pragma mark - UITableView
-
-/**
- * Updates a given table view based on information contained in this GRKArrayDiff.
- *
- * @param tableView  The target table view to update.
- * @param section    The target section of the table view.
- * @param animation  The animation style to perform when updating the table.
- * @param completion A completion block which will be called once the table has been updated (and animations, if any, have completed). This can be `nil`.
- */
-- (void)updateTableView:(UITableView *)tableView section:(NSInteger)section animation:(UITableViewRowAnimation)animation completion:(void(^)(void))completion;
-
-#endif
+- (nullable NSArray *)indexPathsForDiffType:(GRKArrayDiffType)diffType withSection:(NSInteger)section;
 
 @end
