@@ -54,7 +54,7 @@ typedef NS_ENUM(NSUInteger, GRKArrayDiffType) {
  *
  * @return A newly created instance with all properties populated with the appropriate diff information.
  */
-- (nonnull instancetype)initWithPreviousArray:(nullable NSArray *)previousArray currentArray:(nullable NSArray *)currentArray identityBlock:(nullable  NSString * __nullable (^)(id __nonnull obj))identityBlock modifiedBlock:(nullable BOOL(^)(id __nonnull obj))modifiedBlock;
+- (nonnull instancetype)initWithPreviousArray:(nullable NSArray *)previousArray currentArray:(nullable NSArray *)currentArray identityBlock:(nullable  NSString * __nullable (^)(id __nonnull obj))identityBlock modifiedBlock:(nullable BOOL(^)(id __nonnull previousObj, id __nonnull currentObj))modifiedBlock;
 
 /**
  * A convenience method to return the diff set by type.

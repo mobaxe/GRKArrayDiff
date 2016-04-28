@@ -30,7 +30,7 @@
 
 #pragma mark - Lifecycle
 
-- (nonnull instancetype)initWithPreviousArray:(nullable NSArray *)previousArray currentArray:(nullable NSArray *)currentArray identityBlock:(nullable  NSString * __nullable (^)(id __nonnull obj))identityBlock modifiedBlock:(nullable BOOL(^)(id __nonnull obj))modifiedBlock
+- (nonnull instancetype)initWithPreviousArray:(nullable NSArray *)previousArray currentArray:(nullable NSArray *)currentArray identityBlock:(nullable  NSString * __nullable (^)(id __nonnull obj))identityBlock modifiedBlock:(nullable BOOL(^)(id __nonnull previousObj, id __nonnull currentObj))modifiedBlock
 {
     if ((self = [super init]))
     {
@@ -104,8 +104,9 @@
             else
             {
                 //It didn't move, so let's see if it is modified
-                id obj = [currentArray objectAtIndex:[currentIndex unsignedIntegerValue]];
-                BOOL modified = modifiedBlock ? modifiedBlock(obj) : NO;
+                id previousObj = [previousArray objectAtIndex:[previousIndex unsignedIntegerValue]];
+                id currentObj = [currentArray objectAtIndex:[currentIndex unsignedIntegerValue]];
+                BOOL modified = modifiedBlock ? modifiedBlock(previousObj, currentObj) : NO;
                 if (modified)
                 {
                     GRKArrayDiffInfo *diffInfo = [[GRKArrayDiffInfo alloc] initWithIdentity:identity previousIndex:previousIndex currentIndex:currentIndex];
