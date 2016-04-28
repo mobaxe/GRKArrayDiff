@@ -24,6 +24,8 @@
 		DBE2A3EE1B531AF70055AF5F /* GRKArrayDiff+UITableView.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE2A3EC1B531AF70055AF5F /* GRKArrayDiff+UITableView.h */; };
 		DBE2A3EF1B531AF70055AF5F /* GRKArrayDiff+UITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE2A3ED1B531AF70055AF5F /* GRKArrayDiff+UITableView.m */; };
 		DBE2A3F01B531AF70055AF5F /* GRKArrayDiff+UITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE2A3ED1B531AF70055AF5F /* GRKArrayDiff+UITableView.m */; };
+		F50C1EF41CD27716002CAB8D /* GRKArrayDiff+UICollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50C1EF21CD27716002CAB8D /* GRKArrayDiff+UICollectionView.h */; };
+		F50C1EF51CD27716002CAB8D /* GRKArrayDiff+UICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50C1EF31CD27716002CAB8D /* GRKArrayDiff+UICollectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		DBE243BF1B45CC5100F76DE3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DBE2A3EC1B531AF70055AF5F /* GRKArrayDiff+UITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GRKArrayDiff+UITableView.h"; sourceTree = "<group>"; };
 		DBE2A3ED1B531AF70055AF5F /* GRKArrayDiff+UITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GRKArrayDiff+UITableView.m"; sourceTree = "<group>"; };
+		F50C1EF21CD27716002CAB8D /* GRKArrayDiff+UICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GRKArrayDiff+UICollectionView.h"; sourceTree = "<group>"; };
+		F50C1EF31CD27716002CAB8D /* GRKArrayDiff+UICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GRKArrayDiff+UICollectionView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 				DBE243B11B45C44700F76DE3 /* GRKArrayDiffInfo.m */,
 				DBE2A3EC1B531AF70055AF5F /* GRKArrayDiff+UITableView.h */,
 				DBE2A3ED1B531AF70055AF5F /* GRKArrayDiff+UITableView.m */,
+				F50C1EF21CD27716002CAB8D /* GRKArrayDiff+UICollectionView.h */,
+				F50C1EF31CD27716002CAB8D /* GRKArrayDiff+UICollectionView.m */,
 			);
 			name = GRKArrayDiff;
 			path = ../GRKArrayDiff;
@@ -173,6 +179,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50C1EF41CD27716002CAB8D /* GRKArrayDiff+UICollectionView.h in Headers */,
 				DBE2A3EE1B531AF70055AF5F /* GRKArrayDiff+UITableView.h in Headers */,
 				DB8161CE1B4463B800AB36FF /* GRKArrayDiff.h in Headers */,
 				DBE243B21B45C44700F76DE3 /* GRKArrayDiffInfo.h in Headers */,
@@ -278,6 +285,7 @@
 			files = (
 				DB8161CF1B4463B800AB36FF /* GRKArrayDiff.m in Sources */,
 				DBE2A3EF1B531AF70055AF5F /* GRKArrayDiff+UITableView.m in Sources */,
+				F50C1EF51CD27716002CAB8D /* GRKArrayDiff+UICollectionView.m in Sources */,
 				DBE243B31B45C44700F76DE3 /* GRKArrayDiffInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
