@@ -24,8 +24,6 @@
 #pragma mark - UICollectionView
 
 - (void)updateCollectionView:(UICollectionView *)collectionView section:(NSInteger)section completion:(void(^)(void))completion {
-    [CATransaction begin];
-    
     [collectionView performBatchUpdates:^{
         //Deletes
         NSArray *deletions = [self indexPathsForDiffType:GRKArrayDiffTypeDeletions withSection:section];
