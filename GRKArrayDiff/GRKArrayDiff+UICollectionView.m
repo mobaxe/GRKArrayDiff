@@ -1,7 +1,7 @@
 //
-//  GRKArrayDiff+UITableView.m
+//  GRKArrayDiff+UICollectionView.m
 //
-//  Created by Levi Brown on July 12, 2015.
+//  Created by Levi Brown on April 28, 2016.
 //  Copyright (c) 2015 Levi Brown <mailto:levigroker@gmail.com>
 //  This work is licensed under the Creative Commons Attribution 3.0
 //  Unported License. To view a copy of this license, visit
